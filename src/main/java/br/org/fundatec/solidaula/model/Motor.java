@@ -20,5 +20,6 @@ public class Motor {
             // usa a gasolina
             return velocidateAtual + 60;
         }
+        return 0;
     }
 }
