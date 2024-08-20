@@ -1,11 +1,15 @@
 package br.org.fundatec.solidaula.model;
 
+import java.util.Arrays;
+
 public class Carro {
 
     private double velocidade;
     private double velocidadeMaxima;
     private TanqueCombustivel tanqueCombustivel;
     private Motor motor = new Motor(tanqueCombustivel);
+
+    private static final Roda[] rodas = {new Roda(), new Roda(), new Roda(), new Roda()};
 
     public void acelerar(Forca forca) {
 
@@ -16,14 +20,8 @@ public class Carro {
     }
 
     public void frear(Forca forca) {
-        // remover os ifs pois tá ruim
-        if(forca == Forca.LEVE) {
-            velocidade -= 20;
-        } else if(forca == Forca.NORMAL) {
-            velocidade -= 40;
-        } else if(forca == Forca.PESADA) {
-            velocidade -= 60;
-        }
+        Arrays.stream(rodas)
+                .forEach(r -> r.frear(forca));
     }
 
     public void abrirPorta() {}
