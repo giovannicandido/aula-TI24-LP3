@@ -1,12 +1,22 @@
 package br.org.fundatec.solidaula.model.imc;
 
 public class CalculoImc {
+    private final PessoaRecord pessoa;
 
-    public float calcular(float peso, float altura) {
-        return peso / (altura * altura);
+    public CalculoImc(PessoaRecord pessoa) {
+        this.pessoa = pessoa;
     }
 
-    public String classificar(float imc) {
+    public float calcular() {
+        return pessoa.peso() / (pessoa.altura() * pessoa.altura());
+    }
+
+    public String getNomePessoa() {
+        return this.pessoa.nome();
+    }
+
+    public String classificar() {
+        var imc = calcular();
         // Bug de arredondamento.
         if(imc < 17) {
             return "Muito abaixo do peso";

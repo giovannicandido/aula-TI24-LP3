@@ -11,6 +11,18 @@ public class Pessoa {
         this.altura = altura;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public float getAltura() {
+        return altura;
+    }
+
     @Override
     public String toString() {
         return "Pessoa{" +
