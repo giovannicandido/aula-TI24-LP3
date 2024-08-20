@@ -10,7 +10,11 @@ public class IMCMain {
 
         CalculoImc calculoImcAna = new CalculoImc(ana);
         CalculoImc calculoImcJoao = new CalculoImc(joao);
-        Report.imprimirIMC(calculoImcAna, ReportType.SIMPLE);
-        Report.imprimirIMC(calculoImcJoao, ReportType.HTML);
+
+        var reportAna = new Report(ReportType.SIMPLE);
+        var reportJao = new Report(ReportType.HTML);
+
+        reportAna.imprimirIMC(calculoImcAna);
+        reportJao.imprimirIMC(calculoImcJoao);
     }
 }
