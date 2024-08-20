@@ -12,6 +12,7 @@ public class IMCMain {
         var resultado = calculoImc.calcular(82.0f, 1.75f);
         System.out.printf("Resultado imc: %.2f", resultado);
         var classificacao = calculoImc.classificar(resultado);
+        System.out.println();
         System.out.printf("Classificacao imc: %s", classificacao);
     }
 }

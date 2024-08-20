@@ -7,17 +7,21 @@ public class CalculoImc {
     }
 
     public String classificar(float imc) {
-        if(imc < 18.5) {
+        // Bug de arredondamento.
+        if(imc < 17) {
+            return "Muito abaixo do peso";
+        } else if(imc <= 18.49) {
             return "Abaixo do peso";
-        } else if(imc < 24.9) {
+        } else if(imc <= 24.99) {
             return "Peso normal";
-        } else if(imc < 29.9) {
+        } else if(imc <= 29.99) {
             return "Sobrepeso";
-        } else if(imc < 34.9) {
+        } else if(imc <= 34.99) {
             return "Obesidade";
-        } else if (imc >= 40.0) {
+        } else if (imc <= 39.99) {
             return "Obesidade grave";
+        } else {
+            return "Obesidade morbida";
         }
-        throw new RuntimeException("Não pode calcular");
     }
 }
