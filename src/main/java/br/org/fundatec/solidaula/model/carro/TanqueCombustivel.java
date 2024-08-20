@@ -1,4 +1,4 @@
-package br.org.fundatec.solidaula.model;
+package br.org.fundatec.solidaula.model.carro;
 
 public class TanqueCombustivel {
     double litros;

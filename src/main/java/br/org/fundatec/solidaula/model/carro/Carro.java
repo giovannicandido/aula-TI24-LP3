@@ -1,4 +1,4 @@
-package br.org.fundatec.solidaula.model;
+package br.org.fundatec.solidaula.model.carro;
 
 import java.util.Arrays;
 

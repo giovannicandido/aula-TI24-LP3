@@ -1,7 +1,7 @@
 package br.org.fundatec.solidaula.controller;
 
-import br.org.fundatec.solidaula.model.Carro;
-import br.org.fundatec.solidaula.model.Forca;
+import br.org.fundatec.solidaula.model.carro.Carro;
+import br.org.fundatec.solidaula.model.carro.Forca;
 
 public class DigirirController {
     private boolean notWin = true;
