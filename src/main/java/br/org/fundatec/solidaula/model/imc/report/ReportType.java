@@ -1,4 +1,4 @@
-package br.org.fundatec.solidaula.model.imc;
+package br.org.fundatec.solidaula.model.imc.report;
 
 public enum ReportType {
     SIMPLE,

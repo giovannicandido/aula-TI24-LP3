@@ -1,4 +1,6 @@
-package br.org.fundatec.solidaula.model.imc;
+package br.org.fundatec.solidaula.model.imc.report;
+
+import br.org.fundatec.solidaula.model.imc.CalculoImc;
 
 public class HtmlFormatIMCReport implements ReportFormatIMC{
     @Override

@@ -1,4 +1,6 @@
-package br.org.fundatec.solidaula.model.imc;
+package br.org.fundatec.solidaula.model.imc.report;
+
+import br.org.fundatec.solidaula.model.imc.CalculoImc;
 
 // Linkovsky substitution
 public class SimpleFormatIMCReport implements ReportFormatIMC {

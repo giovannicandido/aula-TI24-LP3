@@ -1,5 +1,8 @@
 package br.org.fundatec.solidaula.model.imc;
 
+import br.org.fundatec.solidaula.model.imc.report.Report;
+import br.org.fundatec.solidaula.model.imc.report.ReportType;
+
 public class IMCMain {
     public static void main(String[] args) {
         var ana = new PessoaRecord("Ana", 60.0f, 1.68f);
@@ -12,9 +15,11 @@ public class IMCMain {
         CalculoImc calculoImcJoao = new CalculoImc(joao);
 
         var reportAna = new Report(ReportType.SIMPLE);
-        var reportJao = new Report(ReportType.HTML);
+        var reportJoao = new Report(ReportType.HTML);
+        var reportJoaoElaborado = new Report(ReportType.ELABORATED);
 
         reportAna.imprimirIMC(calculoImcAna);
-        reportJao.imprimirIMC(calculoImcJoao);
+        reportJoao.imprimirIMC(calculoImcJoao);
+        reportJoaoElaborado.imprimirIMC(calculoImcJoao);
     }
 }
