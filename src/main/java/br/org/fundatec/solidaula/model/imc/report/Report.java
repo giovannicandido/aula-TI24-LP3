@@ -16,7 +16,7 @@ public class Report {
     );
 
     public Report(ReportType reportType) {
-        this.reportFormatIMC = reportFabric(reportType);
+        this.reportFormatIMC = reportFormatFabric(reportType);
     }
 
     public void imprimirIMC(CalculoImc calculoImc) {
@@ -25,7 +25,7 @@ public class Report {
         System.out.println(format);
     }
 
-    public ReportFormatIMC reportFabric(ReportType reportType) {
+    public ReportFormatIMC reportFormatFabric(ReportType reportType) {
         var report = AVAILABLE_REPORTS.get(reportType);
         if(Objects.isNull(report)) {
             return new SimpleFormatIMCReport();
