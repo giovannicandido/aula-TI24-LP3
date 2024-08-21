@@ -25,7 +25,7 @@ public class Report {
         System.out.println(format);
     }
 
-    public ReportFormatIMC reportFormatFabric(ReportType reportType) {
+    private ReportFormatIMC reportFormatFabric(ReportType reportType) {
         var report = AVAILABLE_REPORTS.get(reportType);
         if(Objects.isNull(report)) {
             return new SimpleFormatIMCReport();
