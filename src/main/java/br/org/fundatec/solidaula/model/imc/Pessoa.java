@@ -4,6 +4,7 @@ public class Pessoa {
     private String nome;
     private float peso;
     private float altura;
+    public float imc;
 
     public Pessoa(String nome, float peso, float altura) {
         this.nome = nome;

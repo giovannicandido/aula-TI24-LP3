@@ -51,7 +51,21 @@ public class IMCMain {
         // reportAna.imprimirIMC(calculoImcAna);
         // reportJoao.imprimirIMC(calculoImcJoao);
         // reportJoaoElaborado.imprimirIMC(calculoImcJoao);
+        ReportFormatLiskov formatLiskov = new ReportFormatLiskov();
+        formatLiskov = new ReportFormatLiskovError();
+        //
+
+        Pessoa pessoaLiskov = new Pessoa("Teste", 50, 1.27f);
+        Pessoa pessoaComIMC = formatLiskov.calcularIMC(pessoaLiskov);
+
+        if(pessoaComIMC.imc < 0) {
+            throw new RuntimeException("Algo de errado");
+        }
+
+        System.out.println("Finalizado com sucesso: " + pessoaComIMC.imc);
 
         scanner.close();
+
+
     }
 }
