@@ -1,6 +1,7 @@
 package br.org.fundatec.solidaula.model.imc;
 
 import br.org.fundatec.solidaula.model.imc.report.Report;
+import br.org.fundatec.solidaula.model.imc.report.ReportFormatFabric;
 import br.org.fundatec.solidaula.model.imc.report.ReportType;
 
 import java.util.Arrays;
@@ -19,9 +20,9 @@ public class IMCMain {
         CalculoImc calculoImcAna = new CalculoImc(ana);
         CalculoImc calculoImcJoao = new CalculoImc(joao);
 
-        var reportAna = new Report(ReportType.SIMPLE);
-        var reportJoao = new Report(ReportType.HTML);
-        var reportJoaoElaborado = new Report(ReportType.ELABORATED);
+        var reportAna = new Report(ReportFormatFabric.build(ReportType.SIMPLE));
+        var reportJoao = new Report(ReportFormatFabric.build(ReportType.HTML));
+        var reportJoaoElaborado = new Report(ReportFormatFabric.build(ReportType.ELABORATED));
 
         System.out.print("Qual seu nome? ");
         String nome = scanner.nextLine();
@@ -43,9 +44,9 @@ public class IMCMain {
 
         var report = ReportType.valueOf(reportType);
 
-        var pessoa = new PessoaRecord(nome, peso, altura);
-
-        var reportPessoa = new Report(report);
+        PessoaRecord pessoa = new PessoaRecord(nome, peso, altura);
+        var reportFormat = ReportFormatFabric.build(report);
+        var reportPessoa = new Report(reportFormat);
         reportPessoa.imprimirIMC(new CalculoImc(pessoa));
 
         // reportAna.imprimirIMC(calculoImcAna);

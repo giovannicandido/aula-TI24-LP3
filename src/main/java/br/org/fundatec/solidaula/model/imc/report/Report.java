@@ -2,21 +2,13 @@ package br.org.fundatec.solidaula.model.imc.report;
 
 import br.org.fundatec.solidaula.model.imc.CalculoImc;
 
-import java.util.Map;
-import java.util.Objects;
-
 public class Report {
-    private ReportFormatIMC reportFormatIMC;
+    private final ReportFormatIMC reportFormatIMC;
 
-    private static final Map<ReportType, ReportFormatIMC> AVAILABLE_REPORTS = Map.of(
-          ReportType.SIMPLE, new SimpleFormatIMCReport(),
-          ReportType.PDF, new PDFReportFormatIMC(),
-          ReportType.ELABORATED, new EleboratedReportFormatIMC(),
-          ReportType.HTML, new HtmlFormatIMCReport()
-    );
-
-    public Report(ReportType reportType) {
-        this.reportFormatIMC = reportFormatFabric(reportType);
+    // Dependency Inversion Principle
+    // No spring isso é feito por injeção de dependencia, que é uma implementação do principio de inversão de dependencia
+    public Report(ReportFormatIMC reportFormatIMC) {
+        this.reportFormatIMC = reportFormatIMC;
     }
 
     public void imprimirIMC(CalculoImc calculoImc) {
@@ -25,11 +17,4 @@ public class Report {
         System.out.println(format);
     }
 
-    private ReportFormatIMC reportFormatFabric(ReportType reportType) {
-        var report = AVAILABLE_REPORTS.get(reportType);
-        if(Objects.isNull(report)) {
-            return new SimpleFormatIMCReport();
-        }
-        return report;
-    }
 }
